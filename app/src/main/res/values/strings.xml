@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Checkers Game</string>
+    <string name="button_text">Restart</string>
+</resources>

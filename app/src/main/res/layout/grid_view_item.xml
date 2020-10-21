@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="position"
+            type="com.example.checkersgame.positionstate.PositionState" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/selected_grid"
+            android:layout_width="@dimen/square_side"
+            android:layout_height="@dimen/square_side"
+            android:scaleType="centerCrop"
+            android:src="@drawable/selected_grid"
+            android:visibility="invisible"
+            app:setVisibility="@{position.isSelected}" />
+
+        <ImageView
+            android:id="@+id/piece"
+            android:layout_width="@dimen/square_side"
+            android:layout_height="@dimen/square_side"
+            android:scaleType="centerCrop"
+            app:setPiece="@{position.pieceColorId}"
+            tools:src="@drawable/black" />
+
+        <ImageView
+            android:id="@+id/selected_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/point"
+            android:scaleType="centerCrop"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            app:setVisibility="@{position.isPointOn}" />
+
+    </RelativeLayout>
+
+</layout>
